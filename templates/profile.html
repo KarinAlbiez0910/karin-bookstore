@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block body %}
+{% if is_active:%}
+    <h1>This is a profile page for {{user}}</h1>
+{% else:%}
+    <h1>No user active</h1>
+{% endif %}
+{% endblock %}

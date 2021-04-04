@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<html>
+<head>
+
+</head>
+<body>
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for book in books:%}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+              <img style="width: 200px; height: 130px;" class="card-img-top" src="https://img.chefkoch-cdn.de/rezepte/1103541216309441/bilder/890680/crop-960x720/osterlamm-und-osterhase.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{book.name}}</h5>
+                <p class="card-text">{{book.author}}</p>
+                <a href="{{url_for('edit_book', book_name=book.name)}}" class="btn btn-primary">Edit</a>
+                <a href="{{url_for('delete_book', book_name=book.name)}}" class="btn btn-primary">Delete</a>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>
+
+
+
+
+
